@@ -1,0 +1,5 @@
+C:\Projects\TwitterBroadcast\TwitterBroadcast\bin\TwitterBroadcast.dll
+C:\Projects\TwitterBroadcast\TwitterBroadcast\bin\TwitterBroadcast.pdb
+C:\Projects\TwitterBroadcast\TwitterBroadcast\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\TwitterBroadcast\TwitterBroadcast\obj\Debug\TwitterBroadcast.dll
+C:\Projects\TwitterBroadcast\TwitterBroadcast\obj\Debug\TwitterBroadcast.pdb
