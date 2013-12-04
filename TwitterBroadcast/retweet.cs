@@ -43,28 +43,43 @@ namespace TwitterBroadcast
                  select list)
                  .First();
 
+                HtmlString newline = new HtmlString("<br/>");
 
+                HttpContext.Current.Response.Write("<head><head><body>"); 
+
+                HttpContext.Current.Response.Write("Found " + statusList.Statuses.Count.ToString() + " tweets in total" + newline); 
 
 
                 foreach (var tweet in statusList.Statuses)
                 {
 
+
+
+                    HttpContext.Current.Response.Write("<hr/>Looking at tweet from " + tweet.User.Name.ToString() + newline);
+                    HttpContext.Current.Response.Write("Tweet has " + tweet.Entities.HashTagEntities.Count.ToString() + " hashtags" + newline); 
+                    
                     if (tweet.Entities.HashTagEntities.Count > 0)
                     {
 
+                   
+                        
                         foreach (var hashtag in tweet.Entities.HashTagEntities)
                         {
 
                             if (hashtag.Tag == strSearchTag)
                             {
-                                try
-                                {
+
+                                HttpContext.Current.Response.Write("Hashtag " + strSearchTag + " found" + newline);
+
+                              
 
                                     var retweet = twitterCtx.Retweet(tweet.StatusID);
 
+                                    HttpContext.Current.Response.Write("Retweeted " + tweet.StatusID.ToString() + newline); 
+                      
 
-                                }
-                                catch { }
+                              
+                               
 
                             }
 
@@ -79,7 +94,7 @@ namespace TwitterBroadcast
 
                 }
 
-
+                HttpContext.Current.Response.Write("</body>");
             }
 
         }
